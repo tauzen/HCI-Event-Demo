@@ -32,7 +32,8 @@ window.addEventListener('DOMContentLoaded', function() {
     log('NFC found, registering event handler');
     window.navigator.mozNfc.onhcieventtransaction = function(event) {
       firedCount += 1;
-      log('HCI Event Transaction handler fired, count ' + firedCount);
+      log('HCI Event Transaction handler fired, count ' + firedCount +
+          ', event.detil: ' + JSON.stringify(event.detail));
 
       updateUIText('count', firedCount);
       updateUIText('aid', byteArrayToHex(event.detail.extra.aid));
