@@ -36,8 +36,8 @@ window.addEventListener('DOMContentLoaded', function() {
           ', event.detil: ' + JSON.stringify(event.detail));
 
       updateUIText('count', firedCount);
-      updateUIText('aid', byteArrayToHex(event.detail.extra.aid));
-      updateUIText('data', byteArrayToHex(event.detail.extra.data));
+      updateUIText('aid', byteArrayToHex(event.detail.aid));
+      updateUIText('data', byteArrayToHex(event.detail.payload));
       updateUIText('uri', event.detail.uri);
       updateUIText('time', new Date());
     };
