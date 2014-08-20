@@ -1,7 +1,7 @@
 {
-  "version": "0.1.0",
+  "version": "0.2.0",
   "name": "HCI Event Demo",
-  "description": "Initial WIP version using event handler to deliver HCI EVT_TRANSACTION.",
+  "description": "WIP version using system message to deliver HCI EVT_TRANSACTION.",
   "launch_path": "/index.html",
   "icons": {
     "16": "/img/icons/icon16x16.png",
@@ -11,7 +11,10 @@
   },
   "type": "certified",
   "permissions": {
-    "nfc":{ "access": "readwrite" }
+    "nfc-hci-events":{}
   },
+  "messages": [
+     { "nfc-hci-event-transaction": "/index.html" }
+  ],
   "default_locale": "en"
 }

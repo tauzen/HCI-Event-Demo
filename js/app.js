@@ -27,19 +27,16 @@ window.addEventListener('DOMContentLoaded', function() {
   }
 
   var firedCount = 0;
-  log('DOMContentLoaded, checking for NFC');
-  if (window.navigator.mozNfc) {
-    log('NFC found, registering event handler');
-    window.navigator.mozNfc.onhcieventtransaction = function(event) {
-      firedCount += 1;
-      log('HCI Event Transaction handler fired, count ' + firedCount +
-          ', event.detil: ' + JSON.stringify(event.detail));
+  log('Starting app, setting message handler');
+  window.navigator.mozSetMessageHandler("nfc-hci-event-transaction", (msg) => {
+    firedCount += 1;
+    log('HCI Event Transaction message handler fired, count ' + firedCount +
+        ', message : ' + JSON.stringify(msg));
 
-      updateUIText('count', firedCount);
-      updateUIText('aid', byteArrayToHex(event.detail.aid));
-      updateUIText('data', byteArrayToHex(event.detail.payload));
-      updateUIText('uri', event.detail.uri);
-      updateUIText('time', new Date());
-    };
-  }
+    var data = msg.hciEventTransaction;
+    updateUIText('count', firedCount);
+    updateUIText('aid', byteArrayToHex(data.aid));
+    updateUIText('data', byteArrayToHex(data.payload));
+    updateUIText('time', new Date());
+  });
 });
