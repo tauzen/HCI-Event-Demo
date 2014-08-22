@@ -1,4 +1,4 @@
 HCI Event Demo
 --
 
-Initial WIP version using event handler to deliver HCI EVT_TRANSACTION. Uses https://github.com/svic/mozilla-central/  Bug_979767 branch. 
+Demo for testing Tap-to-pay (with HCI event triggering) for payments at Point of Sale (https://bugzilla.mozilla.org/show_bug.cgi?id=979152).

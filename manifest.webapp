@@ -1,7 +1,7 @@
 {
   "version": "0.2.0",
   "name": "HCI Event Demo",
-  "description": "WIP version using system message to deliver HCI EVT_TRANSACTION.",
+  "description": "Demo for testing Tap-to-pay (with HCI event triggering) for payments at Point of Sale, Bug 979152",
   "launch_path": "/index.html",
   "icons": {
     "16": "/img/icons/icon16x16.png",
@@ -16,6 +16,6 @@
   "messages": [
      { "nfc-hci-event-transaction": "/index.html" }
   ],
-  "hci-evt-transaction-src": ["*/A0000000041010*"],
+  "hci-evt-transaction-src": ["*"],
   "default_locale": "en"
 }
